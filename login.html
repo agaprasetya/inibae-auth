@@ -1,0 +1,518 @@
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IniBae Hotspot Login</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="css/modal.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="img/inibae.ico">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+      <a class="navbar-brand" href="https://www.inibae.com">IniBae.com</a>
+    </div>
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+	  <li><a href="http://inibae.com" target="_blank">Tentang kami</a></li>
+	  <li><a class="page-scroll" href="#paket">Paket Internet</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Free Access<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="http://inibae.com">IniBae.com</a></li>
+          <!--<li><a href="http://detik.com" target="_blank">Detik.com</a></li> -->
+        </ul>
+      </li>
+	   <li><button class="btn btn-primary btn-xl page-scroll" id="myBtn">Info Penting !!!</button></li>
+	  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Services<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="http://inibae.com/training" target="_blank">IT Training</a></li>
+		  <li><a href="http://www.inibae.com/#services" target="_blank">IT Consultant</a></li>
+		   <li><a href="http://www.inibae.com/#services">Network Infrastructure</a></li>
+          <li><a href="http://www.inibae.com/#services" target="_blank">Web Application</a></li>
+		  <li><a href="http://www.inibae.com/#services" target="_blank">Global VPS</a></li>
+		  <li><a href="http://www.inibae.com/#services" target="_blank">Enterprise Hosting</a></li>
+		  <li><a href="http://www.inibae.com/#services" target="_blank">Domain</a></li>
+		  <li><a href="http://www.inibae.com/#services" target="_blank">Email Server Instalation</a></li>
+		  <li><a href="http://www.inibae.com/#services" target="_blank">and others</a></li>
+        </ul>
+      </li>
+	 <li><a class="page-scroll" href="#contact">Contact</a></li>
+	  <li><a class="page-scroll" href="#login">Login</a></li>
+
+	  <!-- <li class="active"><a href="#"></a></li> -->
+	    <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SELAKAU<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Divisi 1</a></li>
+          <li><a href="#">Divisi 2</a></li>
+          <li><a href="#">Divisi 3</a></li>
+		  <li><a href="#">Divisi 4</a></li>
+        </ul>
+      </li> -->
+	   <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Jalan Akses<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Seluang</a></li>
+          <li><a href="#">Salatiga</a></li>
+        </ul>
+      </li> -->
+  </div>
+</nav>
+	<img src="img/inibae.png"align="top" /> <br>
+	$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	</script>
+	$(endif)
+
+        <!-- Top content -->
+
+		<section id="login">
+        <div class="top-content">
+
+            <div class="inner-bg">
+                <div class="container">
+
+                            <div class="description">
+                            	<!-- <p>
+	                            	 <img src="img/inibae.png"align="top" />
+								</p> -->
+                    </div>
+					<!--<marquee>Promo internet gratis hadir di malam takbiran, hanya <a href="http://inibae.com"> IniBae.com </a> yang bisa begini, Login dengan user : takbir dan Password : takbir2016 <b></b></marquee> -->
+					<marquee>Masih jaman pakai kuota?, Cobain aja pakai wifi <a href="http://inibae.com"> IniBae.com </a> Bebas download, streaming youtube gak takut kuota abis, klik  <b> Promo </b> di bawah.</marquee>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<!-- <p><img src="img/inibae.png" align="center"></p>  -->
+                            		<p>Ikuti kami dengan memasukkan Username dan Password...</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-lock"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+			                    <form role="form" action="$(link-login-only)" method="post" class="login-form" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+								<input type="hidden" name="dst" value="$(link-orig)" />
+								<input type="hidden" name="popup" value="true" />
+			                    	<div class="form-group">
+			                    		<label class="sr-only" for="username">Username</label>
+			                        	<input type="text" name="username" placeholder="Username..." class="form-username form-control" value="$(username)" id="form-username">
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="password">Password</label>
+			                        	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
+			                        </div>
+			                        <button type="submit" class="btn">Login</button>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+					<!-- paket -->
+					$(if error)<br /><div style="color: #FF0000; font-size: 9px">$(error)</div>$(endif)	</td>
+					<!-- paket -->
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 social-login">
+                        	<div class="social-login-buttons">
+	                        	<div class="panel-group" id="accordion">
+								<br>
+								<br>
+  <div class="panel panel-default">
+   <!--  <div class="panel-heading">
+      <!-- <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Klik disini untuk melihat Promo</a>
+      </h4>
+    </div> -->
+<ul class="list-group">
+    <li class="list-group-item list-group-item-danger"><b>Nikmati Promo Internet IniBae.com</b></li>
+    <li class="list-group-item">Harga Cuma 5000</li>
+    <li class="list-group-item">kadaluarsa voucher 6 jam</li>
+    <li class="list-group-item">Jelajah Dunia tanpa batas dengan Goceng aja &#x263A </li>
+  </ul>
+		</td>
+      </tr>
+    </tbody>
+  </table></div>
+    </div>
+  </div>
+                        	</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</section>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" data-dismiss="modal">Tutup</span>
+      <h2>IniBae.com Corporation<b></b> </h2>
+    </div>
+    <div class="modal-body">
+	<!--<p><b>PROMO !!!! |<b> Mulai Tanggal 31 Oktober 2017 sampai 30 November 2017 Nikmati Promo Setiap Pembelian Voucher Internet 1 Bulan Gratis 2 Cup Minuman Happy Drinks Malangnengah dan Rujak Mang Fakel Malangnengah (Dapat di pilih salah satu), hanya dengan menunjukan voucher 1 bulan yang telah di beli di Gerai  <a href="http://inibae.com" target="_blank">IniBae.Com</a> Terdekat atau hubungi kami di 087806734103 (WA/Tlp/SMS) </p>
+
+	<p> Sponsored by :
+	<img src="img/happy-drinks.jpg" width="120" height="140">
+	&nbsp; &nbsp;
+	<img src="img/mang-fakel.jpg" width="200" height="50">
+</p> -->
+     <!-- <p>Anda sedang berjalan diatas internet IniBae.Com, Nikmati segala macam teknologi modern dari kami bersama <a href="http://inibae.com" target="_blank">IniBae.Com</a>, Kita butuh dukungan Anda  meningkatkan layanan Technology modern IniBae.com, Segera kirimkan saran terbaik Anda melalui email kami di <b>email@inibae.com<b> </p> -->
+	<p>KABAR GEMBIRA !!!, Untuk pelanggan internet 1 bulan <a href="http://inibae.com" target="_blank">IniBae.Com</a> nikmati potongan 12,5% di bulan ketiga setelah berlangganan selama 2 bulan , Hubungi support kami di 087771115192 / 087806734103<b> </p>
+
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+
+</div>
+</div>
+<!-- MODAL 2 -->
+<div class="modal hide fade" id="myModal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">×</a>
+    <h3>Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Save changes</a>
+  </div>
+</div>
+<!-- MODAL 2 -->
+
+<!-- Paket -->
+<section id="paket">
+ <div class="container">
+
+        <!-- Introduction Row -->
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Paket Internet di IniBae.Com
+                    <small></small>
+                </h1>
+                <p>Berikut Voucher Paket internet Murah yang ada di IniBae.Com</p>
+				<p>Pembelian dapat dilakukan Melalui WhatsApp/SMS/Call <b> 087772661242 / 087806734103 </b></p>
+            </div>
+        </div>
+
+        <!-- Team Members Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header"></h2>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="img2/1.png" alt="">
+                <h3>Voucher Internet 1 Jam
+                    <small>Rp. 2000 /Jam (Unlimited Kuota) </small>
+                </h3>
+                <p>------</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="img2/2.png" alt="">
+                <h3>Voucher 3 jam
+                    <small>Rp. 5000 /hari <br>(Unlimited Kuota)</small>
+                </h3>
+                <p>------</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="img2/3.png" alt="">
+                <h3>Voucher Harian
+                    <small>Rp. 15000 /hari <br>(Unlimited Kuota)</small>
+                </h3>
+                <p>------</p>
+            </div>
+			<div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="img2/4.png" alt="">
+                <h3>Voucher Mingguan
+                    <small>Rp. 30000 /minggu  <br>(Unlimited Kuota)</small>
+                </h3>
+                <p>------</p>
+            </div>
+			<div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="img2/4.png" alt="">
+                <h3>Voucher Begadang
+                    <small>Rp. 3000 <br> Berlaku jam 00.00 - 06.00 <br>(Unlimited Kuota)</small>
+                </h3>
+                <p>------</p>
+            </div>
+			<div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="img2/4.png" alt="">
+                <h3>Voucher 1 Bulan
+                    <small>Rp. 80.000 /bulan <br>(Unlimited Kuota)</small>
+                </h3>
+                <p>------</p>
+            </div>
+		</section>
+	<section class="bg-dark" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Let's Get In Touch!</h2>
+                    <hr class="primary">
+                    <p>Siap untuk memulai proyek berikutnya dengan kami? Hubungi kami atau kirim email dan kami akan kembali kepada Anda sesegera mungkin.</p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                    <p>087771115192 / 087806734103</p>
+
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="http://www.inibae.com/contact" onClick="MyWindow=window.open('http://www.inibae.com/contact','MyWindow',width=300,height=150); return false;">Pesan</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<!-- <section class="bg-primary" id="testimonial">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                     <h2 class="section-heading">We've got what you need!</h2>
+                    <hr class="light">
+                    <p class="text-faded">Start IniBae.Com has everything you need to get your new support up and running in no time! All of the Technology IniBae.Com are open source.</p>
+                    <a href="#" class="btn btn-default btn-xl">Get Started!</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+	<footer class="text-center slideanim bg-dark ">
+    <div class="footer-above container">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <h2 class="section-heading">Location</h2>
+				<hr class="primary">
+                    <p>BTN Bukit Narimbang Asri<br>BLOK A10 NO.3<br> Rangkasbitung - Banten, Indonesia</p>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h2 class="section-heading">Around the Web</h2>
+					<hr class="primary">
+                    <ul class="list-inline">
+                        <li class="light">
+                             <a href="https://www.facebook.com/IniBae.comTechnology/" class="btn-social btn-outline" target="_blank"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/inibae.com" class="btn-social btn-outline " target="_blank"><i class="fa fa-fw fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h2 class="section-heading">About IniBae.Com</h2>
+					 <hr class="primary">
+                    <p>More Trusted and More Secured</p>
+                </div>
+            </div>
+        </div>
+	</div>
+	<hr>
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>© 2018 IniBae.Com Technology All Rights Reserved | <a href="ta://www.inibae.com/" target="_blank">www.inibae.com</a></p>
+                </div>
+            </div>
+        </div>
+		<a href="#page-top" title="To Top">
+			<span class="glyphicon glyphicon-chevron-up"></span>
+		</a>
+    </div>
+</footer>
+			<!--
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="img/aga.jpg" alt="">
+                <h3>John Smith
+                    <small>Job Title</small>
+                </h3>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="img/aga.jpg" alt="">
+                <h3>John Smith
+                    <small>Job Title</small>
+                </h3>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div>
+            <div class="col-lg-4 col-sm-6 text-center">
+                <img class="img-circle img-responsive img-center" src="img/aga.jpg" alt="">
+                <h3>John Smith
+                    <small>Job Title</small>
+                </h3>
+                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            </div> -->
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <div style="color: #000000; font-size: 9px; font-weight: bold;"></div>
+	  <div style="color: #000000; font-size: 9px"></div>
+	<!-- $(if error)<br /><div style="color: #FF0000; font-size: 9px">$(error)</div>$(endif) -->	</td>
+  </tr>
+	<tr>
+	  <td align="center" valign="middle" bordercolor="#000000">&nbsp;</td>
+  </tr>
+</table>
+
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+<!-- Paket -->
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+		<!-- <script>
+// Get the modal
+//var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+//var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+//var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+//btn.onclick = function() {
+//    modal.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+//span.onclick = function() {
+  //  modal.style.display = "none";
+//}
+
+// When the user clicks anywhere outside of the modal, close it
+//window.onclick = function(event) {
+  //  if (event.target == modal) {
+    //    modal.style.display = "none";
+    //}
+}
+</script> -->
+
+
+        <!--[if lt IE 10]>
+            <script src="assets/js/placeholder.js"></script>
+        <![endif]-->
+ <!-- jQuery -->
+    <div style="color: #000000; font-size: 9px; font-weight: bold;"></div>
+	  <div style="color: #000000; font-size: 9px"></div>
+	<!-- $(if error)<br /><div style="color: #FF0000; font-size: 9px">$(error)</div>$(endif) -->
+
+
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    </body>
+
+</html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>IniBae Paket Internet</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/round-about.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<script type="text/javascript">
+<!--
+  document.login.username.focus();
+//-->
+</script>
+
+<script type="text/javascript">
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+</script>
+
+</body>
+</html>
